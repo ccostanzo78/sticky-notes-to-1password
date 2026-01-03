@@ -10,6 +10,13 @@ Bulk imports via CLI often fail due to:
 - Rate limiting
 - Truncated content
 
+## Quick Start (Web-safe, repeatable)
+1. Export Sticky Notes DB copy → JSON
+2. Generate canonical clean notes JSON
+3. Build per-note 1Password templates in `templates/`
+4. Import templates with throttling + tags
+5. Verify counts + spot-check bodies before deleting/archiving anything
+
 This approach avoids all of that by using **JSON templates only**.
 
 ## What You Get
