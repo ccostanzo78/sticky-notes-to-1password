@@ -26,6 +26,26 @@ This approach avoids all of that by using **JSON templates only**.
 - Secure Note category
 - Repeatable and auditable process
 
+## Supported Import Method (Do Not Deviate)
+
+This repository supports **one and only one** safe import method:
+
+1. Export Windows Sticky Notes to JSON
+2. Canonicalize notes (titles + body preserved)
+3. Generate per-note 1Password JSON templates
+4. Import templates using `op item create --template`
+
+⚠️ Do NOT:
+- Pass note content via CLI assignment arguments
+- Use `notesPlain=value` directly
+- Batch-import without rate limiting
+
+These approaches WILL cause:
+- Truncated note bodies
+- Escaping errors
+- Silent data loss
+
+
 ## Requirements
 
 - Windows 11
